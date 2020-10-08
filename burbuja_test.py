@@ -35,8 +35,20 @@ def _comparar_curvas(fitted_a, fitted_b):
 def generar_aleatorio(n):
     A = list(range(0, n))
     shuffle(A)
-
     return A
+
+def generar_mejor_caso(n):
+    return list(range(n))
+
+def generar_peor_caso(n):
+    return list(range(n))[::-1]
+
+def generar_caso_promedio(n):
+    A = list(range(n))
+    mitad = n // 2
+    Asub1, Asub2 = A[:mitad], A[mitad:]
+    shuffle(Asub1)
+    return Asub1 + Asub2
 
 
 class PruebasBurbuja(unittest.TestCase):
